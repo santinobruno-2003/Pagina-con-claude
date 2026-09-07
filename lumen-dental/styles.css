@@ -487,8 +487,44 @@ em { font-family: var(--serif-accent); font-style: italic; color: var(--accent);
 .info-card svg { width: 24px; height: 24px; color: var(--accent); flex-shrink: 0; margin-top: 2px; }
 .info-card strong { display: block; font-size: .94rem; color: var(--ink); margin-bottom: .2rem; }
 .info-card span, .info-card p { font-size: .87rem; color: var(--ink-mute); }
-.map-frame { border-radius: var(--radius-lg); overflow: hidden; height: 240px; border: 1px solid var(--line); }
-.map-frame iframe { width: 100%; height: 100%; border: 0; filter: saturate(0.85) contrast(1.02); }
+.map-card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  height: 280px;
+  border: 1px solid var(--line);
+  background: linear-gradient(155deg, #eef7f4, #f6f1e8);
+}
+.map-svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.map-pin-wrap {
+  position: absolute; left: 50%; top: 66%; transform: translate(-50%, -100%);
+  display: flex; flex-direction: column; align-items: center;
+}
+.map-pin-pulse {
+  position: absolute; bottom: 2px; left: 50%; transform: translateX(-50%);
+  width: 16px; height: 16px; border-radius: 50%; background: var(--coral);
+  opacity: .55; animation: pulseRing 2.4s ease-out infinite;
+}
+@media (prefers-reduced-motion: reduce) { .map-pin-pulse { animation: none; } }
+.map-pin { width: 40px; height: 48px; filter: drop-shadow(0 10px 14px rgba(16,49,44,.35)); position: relative; z-index: 1; }
+.map-tooltip {
+  position: absolute; left: 50%; top: 14%; transform: translate(-50%, 0);
+  padding: .55rem .9rem; border-radius: var(--radius-sm);
+  text-align: center; white-space: nowrap;
+}
+.map-tooltip strong { display: block; font-size: .82rem; color: var(--ink); }
+.map-tooltip span { font-size: .72rem; color: var(--ink-mute); }
+.map-cta {
+  position: absolute; right: 14px; bottom: 14px;
+  display: inline-flex; align-items: center; gap: .4rem;
+  padding: .6rem 1rem; border-radius: 999px;
+  background: rgba(255,255,255,.92); color: var(--ink);
+  font-size: .82rem; font-weight: 700;
+  box-shadow: 0 10px 22px -10px rgba(16,49,44,.4);
+  transition: transform .35s var(--ease-out);
+}
+.map-cta:hover { transform: translateY(-2px); }
+.map-cta svg { width: 15px; height: 15px; color: var(--accent); }
 
 /* =============================================================
    17. Final CTA
