@@ -3,13 +3,18 @@
 Todas las piezas están en PNG, con la paleta y Poppins de la guía de marca.
 Carruseles 1080x1350 (4:5) · Historias 1080x1920 (9:16) con zonas seguras respetadas.
 
+## Temas de la semana
+
+Cada día cubre una pata distinta para que no se repita el argumento:
+publicidad (lun y mar), contenido (mié), webs (jue) y profesionales (vie).
+
 ## Calendario
 
 | Día | Feed | Historias |
 |---|---|---|
 | Lun 12 | Carrusel Liza (ya hecho, 5 slides) | lun-1-anuncio · lun-2-repost · lun-3-encuesta |
 | Mar 13 | Reel Liza (ya hecho) | mar-1-reel · mar-2-preguntas · mar-3-dato |
-| Mié 14 | carruseles/mie-01 a mie-04 | mie-1-teaser · mie-2-repost · mie-3-encuesta |
+| Mié 14 | carruseles/mie-01 a mie-05 | mie-1-teaser · mie-2-repost · mie-3-encuesta |
 | Jue 15 | carruseles/jue-01 a jue-05 | jue-1-teaser · jue-2-repost · jue-3-auditoria |
 | Vie 16 | carruseles/vie-01 a vie-05 | vie-1-teaser · vie-2-repost · vie-3-encuesta |
 | Sáb 17 | — (día de historias) | sab-1-intro · sab-2-proceso · sab-3-equipo |
@@ -23,7 +28,7 @@ Carruseles 1080x1350 (4:5) · Historias 1080x1920 (9:16) con zonas seguras respe
   genera la respuesta; el texto del diseño es solo la pregunta.
   - lun-3: encuesta → Sí, funcionó / Sí, pero nada / Nunca probé
   - mar-2: caja de preguntas → "Mi rubro es…"
-  - mie-3: encuesta → Promocionar / Campañas / Nada todavía
+  - mie-3: encuesta → No sé qué decir / No tengo tiempo / Me da vergüenza
   - jue-3: caja de preguntas → "Mi web es…"
   - vie-3: encuesta → No llegan consultas / No tengo tiempo / No sé qué postear
 - **repost** → se suben como fondo y encima pegás el posteo compartido del feed
