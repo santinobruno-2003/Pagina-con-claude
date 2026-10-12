@@ -242,20 +242,23 @@ h1, h2, h3 { text-wrap: balance; line-height: 1.04; letter-spacing: -0.03em; fon
 }
 
 .hero-mesh {
-  position: absolute; inset: -20%; z-index: -2;
-  background:
-    radial-gradient(42% 38% at var(--mx, 62%) var(--my, 26%), rgba(0, 112, 255, .55), transparent 70%),
-    radial-gradient(38% 34% at calc(var(--mx, 62%) - 22%) calc(var(--my, 26%) + 26%), rgba(138, 56, 213, .42), transparent 72%),
-    radial-gradient(34% 30% at calc(var(--mx, 62%) + 16%) calc(var(--my, 26%) + 40%), rgba(0, 179, 119, .3), transparent 74%),
-    linear-gradient(168deg, var(--bg) 0%, var(--bg-2) 100%);
-  filter: blur(58px) saturate(135%);
-  transition: background-position .4s var(--ease-soft);
-  animation: meshDrift 22s var(--ease-soft) infinite alternate;
+  position: absolute; inset: 0; z-index: -2; overflow: hidden;
+  background: linear-gradient(168deg, var(--bg) 0%, var(--bg-2) 100%);
 }
-@keyframes meshDrift {
-  from { transform: scale(1) translate3d(0, 0, 0); }
-  to   { transform: scale(1.08) translate3d(-1.5%, 1.5%, 0); }
+
+/* Cada mancha es un degradado fijo que solo se desplaza: el navegador la
+   compone en la GPU en vez de volver a pintar toda la pantalla por frame. */
+.blob {
+  position: absolute; left: 50%; top: 50%;
+  width: min(118vw, 1250px); aspect-ratio: 1; border-radius: 50%;
+  transform: translate3d(calc(-50% + var(--bx, 0px)), calc(-50% + var(--by, 0px)), 0);
+  will-change: transform;
 }
+.blob-a { background: radial-gradient(circle closest-side, rgba(0, 112, 255, .44), transparent 70%); }
+.blob-b { background: radial-gradient(circle closest-side, rgba(138, 56, 213, .36), transparent 72%);
+          width: min(96vw, 1000px); }
+.blob-c { background: radial-gradient(circle closest-side, rgba(0, 179, 119, .26), transparent 74%);
+          width: min(84vw, 880px); }
 
 .hero-grid-lines {
   position: absolute; inset: 0; z-index: -1; pointer-events: none;
@@ -543,11 +546,11 @@ h1, h2, h3 { text-wrap: balance; line-height: 1.04; letter-spacing: -0.03em; fon
 }
 .plan .btn, .plan .btn-ghost { margin-top: auto; width: 100%; }
 
-.plan-destacado { border-color: rgba(138, 56, 213, .5); }
+.plan-destacado { border-color: rgba(0, 179, 119, .5); }
 .plan-badge {
   position: absolute; top: -11px; left: clamp(1.75rem, 3.4vw, 2.4rem);
   padding: .3rem .8rem; border-radius: 999px;
-  background: var(--violet); color: #fff;
+  background: var(--green); color: #052e20;
   font-size: .72rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
 }
 
@@ -653,10 +656,11 @@ h1, h2, h3 { text-wrap: balance; line-height: 1.04; letter-spacing: -0.03em; fon
   display: grid; place-content: center;
   background: #25D366; color: #06301A;
   box-shadow: 0 14px 34px -8px rgba(37, 211, 102, .6);
-  opacity: 0; transform: translateY(18px) scale(.9); pointer-events: none;
-  transition: opacity .45s var(--ease-out), transform .45s var(--ease-bounce);
+  opacity: 0; transform: translateY(18px) scale(.9);
+  animation: waIn .5s var(--ease-bounce) .5s forwards;
+  transition: transform .35s var(--ease-out);
 }
-.wa-float.is-on { opacity: 1; transform: none; pointer-events: auto; }
+@keyframes waIn { to { opacity: 1; transform: none; } }
 .wa-float:hover { transform: scale(1.07); }
 .wa-float svg { width: 30px; height: 30px; }
 
@@ -683,7 +687,7 @@ h1, h2, h3 { text-wrap: balance; line-height: 1.04; letter-spacing: -0.03em; fon
 html.no-js .reveal,
 html.no-js .split-word,
 html.no-js .proyecto-peek { opacity: 1; transform: none; }
-html.no-js .wa-float { opacity: 1; transform: none; pointer-events: auto; }
+html.no-js .wa-float { opacity: 1; transform: none; animation: none; }
 html.no-js .proyecto-peek { display: none; }
 
 /* =============================================================
@@ -730,6 +734,5 @@ html.no-js .proyecto-peek { display: none; }
    ============================================================= */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .hero-mesh { animation: none; }
   .mark-hero .layer { animation: none; }
 }

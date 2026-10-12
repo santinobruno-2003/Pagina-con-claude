@@ -19,6 +19,7 @@ BINARIOS = [
     ("assets/img/caso-lumen.webp", "image/webp"),
     ("assets/img/caso-duck.webp", "image/webp"),
     ("assets/img/caso-silragolia.webp", "image/webp"),
+    ("assets/img/caso-liza.webp", "image/webp"),
     ("assets/img/isotipo.webp", "image/webp"),
     ("assets/img/icon-180.png", "image/png"),
     ("favicon.ico", "image/x-icon"),

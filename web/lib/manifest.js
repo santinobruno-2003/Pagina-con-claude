@@ -64,7 +64,7 @@
         tipo: "Meta Ads",
         anio: "2026",
         nota: "98 consultas por WhatsApp en 7 días con unos USD 5 por día.",
-        img: "",
+        img: "assets/img/caso-liza.webp",
         url: ""
       }
     ]

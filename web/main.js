@@ -178,14 +178,22 @@
     var mesh = $("[data-mouse-gradient]");
     if (!mesh || !fineHover) return;
 
-    var tx = 62, ty = 26, cx = 62, cy = 26, raf = null;
+    var blobs = $$(".blob", mesh);
+    if (!blobs.length) return;
+
+    // Cada mancha se desplaza distinto, para que el fondo tenga profundidad
+    var factores = [0.26, -0.18, 0.12];
+    var tx = 0, ty = 0, cx = 0, cy = 0, raf = null;
 
     var loop = function () {
-      cx += (tx - cx) * 0.075;
-      cy += (ty - cy) * 0.075;
-      mesh.style.setProperty("--mx", cx.toFixed(2) + "%");
-      mesh.style.setProperty("--my", cy.toFixed(2) + "%");
-      if (Math.abs(tx - cx) > 0.1 || Math.abs(ty - cy) > 0.1) {
+      cx += (tx - cx) * 0.08;
+      cy += (ty - cy) * 0.08;
+      for (var i = 0; i < blobs.length; i++) {
+        var f = factores[i % factores.length];
+        blobs[i].style.setProperty("--bx", (cx * f).toFixed(1) + "px");
+        blobs[i].style.setProperty("--by", (cy * f).toFixed(1) + "px");
+      }
+      if (Math.abs(tx - cx) > 0.5 || Math.abs(ty - cy) > 0.5) {
         raf = requestAnimationFrame(loop);
       } else {
         raf = null;
@@ -193,8 +201,8 @@
     };
 
     window.addEventListener("mousemove", function (e) {
-      tx = (e.clientX / window.innerWidth) * 100;
-      ty = (e.clientY / window.innerHeight) * 100;
+      tx = e.clientX - window.innerWidth / 2;
+      ty = e.clientY - window.innerHeight / 2;
       if (!raf) raf = requestAnimationFrame(loop);
     }, { passive: true });
   }
@@ -312,19 +320,6 @@
   }
 
   /* ---------------------------------------------------------
-     Botón flotante de WhatsApp: aparece al pasar el hero
-     --------------------------------------------------------- */
-  function initWaFloat() {
-    var float = $(".wa-float");
-    if (!float) return;
-    var onScroll = function () {
-      float.classList.toggle("is-on", window.scrollY > window.innerHeight * 0.75);
-    };
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-  }
-
-  /* ---------------------------------------------------------
      Datos del manifiesto que sí conviene tener en un solo lugar
      --------------------------------------------------------- */
   function initYear() {
@@ -360,7 +355,6 @@
     safe(initProjectPeek, "initProjectPeek");
     safe(initTilt, "initTilt");
     safe(initFaqs, "initFaqs");
-    safe(initWaFloat, "initWaFloat");
     safe(initYear, "initYear");
     safe(initContactFromData, "initContactFromData");
 
