@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<title>Presupuesto — Estética Leonhardt</title>
+<style>
+  @page { size: A4; margin: 0; }
+
+  /* Fuente incrustada. Cormorant Garamond se descartó: el archivo que
+     entrega Google Fonts dibuja los acentos corridos a la derecha. */
+  @font-face{font-family:'EBG';src:url('EBGaramond_1.ttf') format('truetype');font-weight:400;font-style:normal;}
+  @font-face{font-family:'EBG';src:url('EBGaramond_2.ttf') format('truetype');font-weight:500;font-style:normal;}
+
+  :root{
+    --crema:#FAF6F0;
+    --crema-2:#F2EADF;
+    --oro:#A98B5D;
+    --oro-claro:#C9AE82;
+    --tinta:#38302A;
+    --suave:#7A6B5C;
+    --linea:#E3D7C6;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Poppins',sans-serif;color:var(--tinta);background:#fff;-webkit-font-smoothing:antialiased;}
+
+  .hoja{
+    width:210mm; height:297mm;
+    padding:14mm 15mm 11mm;
+    background:var(--crema);
+    position:relative; overflow:hidden;
+    display:flex; flex-direction:column;
+  }
+
+  .halo{position:absolute;border-radius:50%;pointer-events:none;}
+  .halo-1{width:280mm;height:280mm;top:-150mm;right:-125mm;
+          background:radial-gradient(circle closest-side, rgba(169,139,93,.17), transparent 70%);}
+  .halo-2{width:190mm;height:190mm;bottom:-105mm;left:-75mm;
+          background:radial-gradient(circle closest-side, rgba(201,174,130,.15), transparent 70%);}
+
+  .capa{position:relative;z-index:1;display:flex;flex-direction:column;height:100%;}
+
+  h1,h2,h3{font-family:'EBG',Georgia,serif;font-weight:400;letter-spacing:.005em;}
+  .filete{width:42px;height:1.5px;background:var(--oro);margin:0 0 5mm;}
+  .sello{font-size:8pt;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--oro);}
+
+  /* ---------- cabecera ---------- */
+  .cab{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:9mm;}
+  .cab .marca{text-align:right;font-size:7.8pt;color:var(--suave);line-height:1.6;}
+  .cab .marca b{display:block;font-size:9.6pt;color:var(--tinta);font-weight:600;}
+
+  h1{font-size:34pt;line-height:1.06;margin-bottom:3mm;}
+  h1 em{font-style:italic;color:var(--oro);}
+  .bajada{font-size:9.4pt;line-height:1.7;color:var(--suave);max-width:118mm;}
+
+  /* ---------- planes ---------- */
+  .planes{display:flex;gap:5mm;margin-top:9mm;}
+  .plan{
+    flex:1;background:#fff;border:1px solid var(--linea);border-radius:3mm;
+    padding:7mm 6mm;display:flex;flex-direction:column;
+  }
+  .plan.destacado{border-color:var(--oro);box-shadow:0 3mm 11mm -6mm rgba(169,139,93,.45);position:relative;}
+  .cinta{
+    position:absolute;top:-3mm;left:6mm;background:var(--oro);color:#fff;
+    font-size:6.6pt;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+    padding:1.2mm 3.2mm;border-radius:1mm;
+  }
+  .plan h2{font-size:17pt;line-height:1.15;margin-bottom:1.2mm;}
+  .plan .para{font-size:8pt;color:var(--suave);line-height:1.55;min-height:9mm;}
+  .precio{font-family:'EBG',serif;font-size:29pt;color:var(--oro);line-height:1;margin:2.5mm 0 0;}
+  .precio small{font-size:8.2pt;font-family:'Poppins',sans-serif;color:var(--suave);display:block;margin-top:1.2mm;}
+  .plan ul{list-style:none;margin-top:4mm;display:grid;gap:2.2mm;}
+  .plan li{font-size:8.4pt;line-height:1.45;padding-left:5mm;position:relative;}
+  .plan li::before{content:"";position:absolute;left:0;top:1.6mm;width:2mm;height:2mm;border-radius:50%;background:var(--oro-claro);}
+  .plan.destacado li::before{background:var(--oro);}
+
+  /* ---------- nota ---------- */
+  .nota{
+    margin-top:7mm;background:var(--crema-2);border-left:2px solid var(--oro);
+    border-radius:0 2mm 2mm 0;padding:5mm 6mm;
+  }
+  .nota h3{font-size:12pt;margin-bottom:1.5mm;}
+  .nota p{font-size:8.2pt;line-height:1.65;color:var(--suave);}
+  .nota b{color:var(--tinta);font-weight:600;}
+
+  /* ---------- prueba ---------- */
+  .prueba{
+    margin-top:7mm;background:var(--tinta);color:#fff;border-radius:3mm;
+    padding:6mm 7mm;display:flex;align-items:center;gap:7mm;
+  }
+  .prueba .num{font-family:'EBG',serif;font-size:38pt;line-height:.9;color:var(--oro-claro);}
+  .prueba .txt{font-size:8.2pt;line-height:1.6;color:#CFC3B4;}
+  .prueba .txt b{color:#fff;font-weight:500;display:block;font-size:10pt;margin-bottom:1mm;font-family:'Poppins',sans-serif;}
+
+  /* ---------- pie ---------- */
+  .datos{margin-top:7mm;display:flex;gap:7mm;}
+  .dato{flex:1;}
+  .dato span{font-size:7.4pt;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--oro);display:block;margin-bottom:1.5mm;}
+  .dato p{font-size:8.4pt;line-height:1.6;color:var(--suave);}
+  .dato b{color:var(--tinta);font-weight:600;}
+
+  .cierre{
+    margin-top:auto;border-top:1px solid var(--linea);padding-top:6mm;
+    display:flex;justify-content:space-between;align-items:flex-end;
+  }
+  .cierre .izq h3{font-size:15pt;margin-bottom:1.5mm;}
+  .cierre .izq p{font-size:8.2pt;color:var(--suave);line-height:1.55;}
+  .cierre .der{text-align:right;font-size:8.2pt;line-height:1.85;color:var(--suave);}
+  .cierre .der b{display:block;font-size:10pt;color:var(--tinta);font-weight:600;margin-bottom:.8mm;}
+  .cierre .der span{color:var(--oro);font-weight:500;}
+</style>
+</head>
+<body>
+
+<section class="hoja">
+  <div class="halo halo-1"></div>
+  <div class="halo halo-2"></div>
+
+  <div class="capa">
+    <header class="cab">
+      <p class="sello">Presupuesto</p>
+      <div class="marca">
+        <b>stackdigital</b>
+        Web · Contenido · Ads<br>
+        Octubre 2026
+      </div>
+    </header>
+
+    <div class="filete"></div>
+    <h1>Estética<br>Leonhardt<em>.</em></h1>
+    <p class="bajada">
+      Veintitrés años de experiencia merecen una presencia online a la altura.
+      Dos caminos para que quien te busca, te encuentre — y te escriba.
+    </p>
+
+    <div class="planes">
+      <article class="plan destacado">
+        <span class="cinta">Recomendado</span>
+        <h2>Web + Promoción</h2>
+        <p class="para">Tu página propia y campañas que te traen consultas nuevas cada semana.</p>
+        <p class="precio">$500.000<small>Pago único</small></p>
+        <ul>
+          <li>Página web con diseño propio</li>
+          <li>Turnos por WhatsApp en un toque</li>
+          <li>Campañas en Instagram y Facebook</li>
+          <li>Usamos el contenido que ya hacés</li>
+          <li>Revisión y ajuste semanal</li>
+          <li>Reporte mensual de resultados</li>
+        </ul>
+      </article>
+
+      <article class="plan">
+        <h2>Solo la web</h2>
+        <p class="para">Tu lugar propio en internet, listo para recibir a quien ya te busca.</p>
+        <p class="precio">$300.000<small>Pago único</small></p>
+        <ul>
+          <li>Página web con diseño propio</li>
+          <li>Turnos por WhatsApp en un toque</li>
+          <li>Textos y diseño incluidos</li>
+          <li>Dominio y publicación</li>
+          <li>Un mes de ajustes sin cargo</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="nota">
+      <h3>La inversión en publicidad va aparte</h3>
+      <p>
+        Los $500.000 cubren nuestro trabajo. La plata que se le paga a Meta para mostrar
+        los anuncios la cargás vos con tu tarjeta y la frenás cuando quieras.
+        <b>Recomendamos USD 5 por día:</b> con eso ya se ven resultados.
+      </p>
+    </div>
+
+    <div class="prueba">
+      <div class="num">98</div>
+      <div class="txt">
+        <b>consultas por WhatsApp en 7 días</b>
+        Lo logró una clienta nuestra con USD 5 por día. Cada consulta le costó $393.
+      </div>
+    </div>
+
+    <div class="datos">
+      <div class="dato">
+        <span>Tiempos</span>
+        <p>Tu página publicada en <b>una semana como mucho</b>.</p>
+      </div>
+      <div class="dato">
+        <span>Formas de pago</span>
+        <p>50% para arrancar y 50% al publicar.</p>
+      </div>
+      <div class="dato">
+        <span>Validez</span>
+        <p>Este presupuesto vale por 15 días.</p>
+      </div>
+    </div>
+
+    <div class="cierre">
+      <div class="izq">
+        <h3>¿Arrancamos?</h3>
+        <p>Escribinos y coordinamos la primera charla. Sin compromiso.</p>
+      </div>
+      <div class="der">
+        <b>stackdigital</b>
+        <span>11 3251-9490</span><br>
+        @stackdigital.arg
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
