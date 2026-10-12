@@ -42,5 +42,3 @@ assets/photos/    originales (no hace falta subirlos)
 ## Pendiente
 
 - Falta el dominio definitivo en las etiquetas `og:` de `index.html`.
-- Faltan las capturas de Duck Argentina y Espacio Il Ragolia para que esos
-  dos proyectos muestren vista previa al pasar el mouse, como hace Lumen.

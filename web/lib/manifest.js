@@ -42,20 +42,20 @@
       },
       {
         nombre: "Duck Argentina",
-        rubro: "Indumentaria",
+        rubro: "Indumentaria deportiva",
         tipo: "Sitio web",
         anio: "2026",
-        nota: "Tienda con catálogo y contacto directo.",
-        img: "",
+        nota: "Tienda con catálogo, clubes y carrito.",
+        img: "assets/img/caso-duck.webp",
         url: "https://duckargentina.com/"
       },
       {
-        nombre: "Espacio Il Ragolia",
-        rubro: "Espacio de eventos",
+        nombre: "Espacio Sil Ragolia",
+        rubro: "Nutrición, deporte y estética",
         tipo: "Sitio web",
         anio: "2026",
-        nota: "Presentación del espacio y reserva de fechas.",
-        img: "",
+        nota: "Servicios y reserva de turnos online.",
+        img: "assets/img/caso-silragolia.webp",
         url: "https://espaciosilragolia.com/"
       },
       {
