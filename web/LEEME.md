@@ -5,12 +5,27 @@ nada ni instalar nada. Se sube la carpeta entera por FTP y funciona.
 
 ## Subirla a Hostinger
 
-1. Entrá al Administrador de archivos (o conectate por FTP).
+1. Entrá a hPanel → **Sitios web** → tu dominio → **Administrador de archivos**.
 2. Abrí la carpeta `public_html`.
-3. Arrastrá adentro **todo el contenido de esta carpeta**, incluido el archivo
-   `.htaccess` (empieza con punto: en algunos sistemas está oculto, hay que
-   activar "mostrar archivos ocultos").
-4. Listo. Entrá a tu dominio.
+3. Si adentro hay un `index.html` o un `default.php` que puso Hostinger,
+   borralos. No borres `.well-known` si existe.
+4. Botón **Subir archivos** y subí `web-stackdigital.zip` tal cual.
+5. Click derecho sobre el zip → **Extraer** (Extract) → confirmá que la ruta
+   sea `/public_html`.
+6. Borrá el zip, que ya no hace falta.
+7. Entrá a tu dominio. Debería verse.
+
+El archivo `.htaccess` empieza con punto, así que el Administrador de archivos
+puede no mostrarlo. Para verlo: ícono de **Configuración** (engranaje, arriba
+a la derecha) → **Mostrar archivos ocultos**. Tiene que estar sí o sí en
+`public_html`, es lo que evita que el navegador muestre versiones viejas.
+
+## Certificado HTTPS
+
+En hPanel → **Seguridad** → **SSL**, activalo para el dominio (es gratis y
+tarda unos minutos). Cuando el candado ya funcione, abrí `.htaccess` y
+descomentá el bloque que dice "HTTPS redirect": sacale el `#` a las cinco
+líneas. Eso manda a todo el mundo a la versión segura.
 
 ## Cada vez que cambies algo
 
