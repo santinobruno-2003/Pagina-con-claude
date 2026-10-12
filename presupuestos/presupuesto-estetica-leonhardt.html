@@ -26,7 +26,7 @@
 
   .hoja{
     width:210mm; height:297mm;
-    padding:14mm 15mm 11mm;
+    padding:11mm 14mm 9mm;
     background:var(--crema);
     position:relative; overflow:hidden;
     display:flex; flex-direction:column;
@@ -45,19 +45,19 @@
   .sello{font-size:8pt;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--oro);}
 
   /* ---------- cabecera ---------- */
-  .cab{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:9mm;}
+  .cab{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:5mm;}
   .cab .marca{text-align:right;font-size:7.8pt;color:var(--suave);line-height:1.6;}
   .cab .marca b{display:block;font-size:9.6pt;color:var(--tinta);font-weight:600;}
 
-  h1{font-size:34pt;line-height:1.06;margin-bottom:3mm;}
+  h1{font-size:28pt;line-height:1.05;margin-bottom:2.5mm;}
   h1 em{font-style:italic;color:var(--oro);}
-  .bajada{font-size:9.4pt;line-height:1.7;color:var(--suave);max-width:118mm;}
+  .bajada{font-size:9pt;line-height:1.6;color:var(--suave);max-width:118mm;}
 
   /* ---------- planes ---------- */
-  .planes{display:flex;gap:5mm;margin-top:9mm;}
+  .planes{display:flex;gap:4.5mm;margin-top:6mm;}
   .plan{
     flex:1;background:#fff;border:1px solid var(--linea);border-radius:3mm;
-    padding:7mm 6mm;display:flex;flex-direction:column;
+    padding:6mm 5.5mm;display:flex;flex-direction:column;
   }
   .plan.destacado{border-color:var(--oro);box-shadow:0 3mm 11mm -6mm rgba(169,139,93,.45);position:relative;}
   .cinta{
@@ -66,41 +66,48 @@
     padding:1.2mm 3.2mm;border-radius:1mm;
   }
   .plan h2{font-size:17pt;line-height:1.15;margin-bottom:1.2mm;}
-  .plan .para{font-size:8pt;color:var(--suave);line-height:1.55;min-height:9mm;}
-  .precio{font-family:'EBG',serif;font-size:29pt;color:var(--oro);line-height:1;margin:2.5mm 0 0;}
+  .plan .para{font-size:7.8pt;color:var(--suave);line-height:1.5;min-height:7mm;}
+  .precio{font-family:'EBG',serif;font-size:26pt;color:var(--oro);line-height:1;margin:2mm 0 0;}
   .precio small{font-size:8.2pt;font-family:'Poppins',sans-serif;color:var(--suave);display:block;margin-top:1.2mm;}
-  .plan ul{list-style:none;margin-top:4mm;display:grid;gap:2.2mm;}
-  .plan li{font-size:8.4pt;line-height:1.45;padding-left:5mm;position:relative;}
+  .mensual{
+    margin-top:2.5mm;padding:2.5mm 3.5mm;background:var(--crema);border-radius:2mm;
+    font-size:10.5pt;font-weight:600;color:var(--tinta);line-height:1.2;
+  }
+  .mensual span{display:block;font-size:7.6pt;font-weight:400;color:var(--suave);margin-top:.8mm;letter-spacing:.02em;}
+  .plan.destacado .mensual{background:var(--crema-2);}
+  .plan ul{list-style:none;margin-top:3.5mm;display:grid;gap:1.9mm;}
+  .plan li{font-size:8.1pt;line-height:1.42;padding-left:5mm;position:relative;}
+  .plan li b{font-weight:600;}
   .plan li::before{content:"";position:absolute;left:0;top:1.6mm;width:2mm;height:2mm;border-radius:50%;background:var(--oro-claro);}
   .plan.destacado li::before{background:var(--oro);}
 
   /* ---------- nota ---------- */
   .nota{
-    margin-top:7mm;background:var(--crema-2);border-left:2px solid var(--oro);
-    border-radius:0 2mm 2mm 0;padding:5mm 6mm;
+    margin-top:5mm;background:var(--crema-2);border-left:2px solid var(--oro);
+    border-radius:0 2mm 2mm 0;padding:4mm 5mm;
   }
-  .nota h3{font-size:12pt;margin-bottom:1.5mm;}
-  .nota p{font-size:8.2pt;line-height:1.65;color:var(--suave);}
+  .nota h3{font-size:11pt;margin-bottom:1.2mm;}
+  .nota p{font-size:7.9pt;line-height:1.6;color:var(--suave);}
   .nota b{color:var(--tinta);font-weight:600;}
 
   /* ---------- prueba ---------- */
   .prueba{
-    margin-top:7mm;background:var(--tinta);color:#fff;border-radius:3mm;
-    padding:6mm 7mm;display:flex;align-items:center;gap:7mm;
+    margin-top:5mm;background:var(--tinta);color:#fff;border-radius:3mm;
+    padding:4.5mm 6mm;display:flex;align-items:center;gap:6mm;
   }
-  .prueba .num{font-family:'EBG',serif;font-size:38pt;line-height:.9;color:var(--oro-claro);}
+  .prueba .num{font-family:'EBG',serif;font-size:32pt;line-height:.9;color:var(--oro-claro);}
   .prueba .txt{font-size:8.2pt;line-height:1.6;color:#CFC3B4;}
   .prueba .txt b{color:#fff;font-weight:500;display:block;font-size:10pt;margin-bottom:1mm;font-family:'Poppins',sans-serif;}
 
   /* ---------- pie ---------- */
-  .datos{margin-top:7mm;display:flex;gap:7mm;}
+  .datos{margin-top:5mm;display:flex;gap:6mm;}
   .dato{flex:1;}
   .dato span{font-size:7.4pt;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--oro);display:block;margin-bottom:1.5mm;}
   .dato p{font-size:8.4pt;line-height:1.6;color:var(--suave);}
   .dato b{color:var(--tinta);font-weight:600;}
 
   .cierre{
-    margin-top:auto;border-top:1px solid var(--linea);padding-top:6mm;
+    margin-top:auto;border-top:1px solid var(--linea);padding-top:5mm;
     display:flex;justify-content:space-between;align-items:flex-end;
   }
   .cierre .izq h3{font-size:15pt;margin-bottom:1.5mm;}
@@ -130,7 +137,7 @@
     <h1>Estética<br>Leonhardt<em>.</em></h1>
     <p class="bajada">
       Veintitrés años de experiencia merecen una presencia online a la altura.
-      Dos caminos para que quien te busca, te encuentre — y te escriba.
+      Dos caminos para que quien te busca, te escriba.
     </p>
 
     <div class="planes">
@@ -138,27 +145,31 @@
         <span class="cinta">Recomendado</span>
         <h2>Web + Promoción</h2>
         <p class="para">Tu página propia y campañas que te traen consultas nuevas cada semana.</p>
-        <p class="precio">$500.000<small>Pago único</small></p>
+        <p class="precio">$500.000<small>Pago inicial, por única vez</small></p>
+        <p class="mensual">+ $250.000 por mes<span>A partir del segundo mes</span></p>
         <ul>
           <li>Página web con diseño propio</li>
           <li>Turnos por WhatsApp en un toque</li>
           <li>Campañas en Instagram y Facebook</li>
           <li>Usamos el contenido que ya hacés</li>
-          <li>Revisión y ajuste semanal</li>
-          <li>Reporte mensual de resultados</li>
+          <li><b>Reunión semanal</b> para mostrarte cómo viene todo</li>
+          <li>Cambios de fotos y contenido cuando quieras</li>
+          <li>Servidores, actualizaciones y soporte 24/7</li>
         </ul>
       </article>
 
       <article class="plan">
         <h2>Solo la web</h2>
         <p class="para">Tu lugar propio en internet, listo para recibir a quien ya te busca.</p>
-        <p class="precio">$300.000<small>Pago único</small></p>
+        <p class="precio">$300.000<small>Pago inicial, por única vez</small></p>
+        <p class="mensual">+ $100.000 por mes<span>A partir del segundo mes</span></p>
         <ul>
           <li>Página web con diseño propio</li>
           <li>Turnos por WhatsApp en un toque</li>
           <li>Textos y diseño incluidos</li>
           <li>Dominio y publicación</li>
-          <li>Un mes de ajustes sin cargo</li>
+          <li>Cambios de fotos y contenido cuando quieras</li>
+          <li>Servidores, actualizaciones y soporte 24/7</li>
         </ul>
       </article>
     </div>
@@ -166,8 +177,8 @@
     <div class="nota">
       <h3>La inversión en publicidad va aparte</h3>
       <p>
-        Los $500.000 cubren nuestro trabajo. La plata que se le paga a Meta para mostrar
-        los anuncios la cargás vos con tu tarjeta y la frenás cuando quieras.
+        Ni el pago inicial ni la mensualidad incluyen la plata que se le paga a Meta para
+        mostrar los anuncios: esa la cargás vos con tu tarjeta y la frenás cuando quieras.
         <b>Recomendamos USD 5 por día:</b> con eso ya se ven resultados.
       </p>
     </div>
@@ -187,7 +198,7 @@
       </div>
       <div class="dato">
         <span>Formas de pago</span>
-        <p>50% para arrancar y 50% al publicar.</p>
+        <p>Inicial: 50% al arrancar y 50% al publicar.</p>
       </div>
       <div class="dato">
         <span>Validez</span>
