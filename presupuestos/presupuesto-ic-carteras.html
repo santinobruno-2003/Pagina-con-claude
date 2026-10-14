@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<title>Presupuesto — IC Carteras</title>
+<style>
+  @page { size: A4; margin: 0; }
+  :root{
+    --fondo:#0C1321; --degrade:#0B2C5A; --circulo:#0B294E; --violeta:#211A41;
+    --azul:#0574FF; --azul-suave:#73ACFF; --texto:#C5C5E0; --tenue:#6A698C;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Poppins',sans-serif;color:#fff;-webkit-font-smoothing:antialiased;}
+
+  .hoja{width:210mm;height:297mm;background:var(--fondo);
+    padding:9mm 13mm 8mm;position:relative;overflow:hidden;
+    display:flex;flex-direction:column;}
+  .fondo{position:absolute;inset:0;
+    background:radial-gradient(240mm 200mm at 80% 12%, var(--degrade) 0%, rgba(11,44,90,0) 60%);}
+  .circ{position:absolute;border-radius:50%;}
+  .circ-azul{width:150mm;height:150mm;top:-46mm;right:-38mm;background:var(--circulo);}
+  .circ-violeta{width:110mm;height:110mm;bottom:-52mm;left:-44mm;background:var(--violeta);}
+  .capa{position:relative;z-index:1;display:flex;flex-direction:column;height:100%;}
+
+  .cab{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:5mm;}
+  .logo{font-size:15pt;font-weight:700;letter-spacing:-.01em;}
+  .logo i{font-style:normal;color:var(--azul);}
+  .cab .fecha{text-align:right;font-size:8pt;color:var(--tenue);line-height:1.6;}
+
+  .volanta{font-size:8pt;font-weight:600;letter-spacing:.28em;text-transform:uppercase;
+    color:var(--azul-suave);margin-bottom:3.5mm;}
+  h1{font-size:23pt;font-weight:700;line-height:1.0;letter-spacing:-.025em;}
+  h1 .az{color:var(--azul-suave);}
+  .intro{font-size:9.2pt;line-height:1.55;color:var(--texto);margin-top:4mm;max-width:142mm;}
+  .intro b{color:#fff;font-weight:600;}
+
+  h2{font-size:8pt;font-weight:600;letter-spacing:.28em;text-transform:uppercase;
+    color:var(--azul-suave);margin:5mm 0 3mm;}
+
+  .packs{display:flex;gap:4.5mm;}
+  .pack{flex:1;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.12);
+    border-radius:3mm;padding:4.5mm 4.5mm;position:relative;display:flex;flex-direction:column;}
+  .pack.destacado{border-color:var(--azul);background:rgba(5,116,255,.10);}
+  .cinta{position:absolute;top:-2.8mm;left:5.5mm;background:var(--azul);color:#fff;
+    font-size:6.4pt;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+    padding:1.1mm 3mm;border-radius:1mm;}
+  .pack h3{font-size:12.5pt;font-weight:700;letter-spacing:-.015em;margin-bottom:3mm;}
+
+  .fila{display:flex;justify-content:space-between;align-items:baseline;
+    padding:2mm 0;border-bottom:1px solid rgba(255,255,255,.1);}
+  .fila:last-of-type{border-bottom:none;}
+  .fila .et{font-size:8pt;color:var(--tenue);text-transform:uppercase;letter-spacing:.12em;}
+  .fila .vl{font-size:13.5pt;font-weight:700;color:var(--azul-suave);}
+  .fila .vl small{font-size:7.5pt;font-weight:400;color:var(--tenue);display:block;
+    text-align:right;letter-spacing:0;text-transform:none;margin-top:.5mm;}
+
+  .pack ul{list-style:none;margin-top:3mm;display:grid;gap:1.6mm;}
+  .pack li{font-size:7.7pt;line-height:1.4;color:var(--texto);padding-left:4.6mm;position:relative;}
+  .pack li::before{content:"";position:absolute;left:0;top:1.6mm;width:1.8mm;height:1.8mm;
+    border-radius:50%;background:var(--azul);}
+  .pack .sub{font-size:7.4pt;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--tenue);margin:3.2mm 0 1.6mm;}
+
+  .pauta{margin-top:5mm;background:rgba(5,116,255,.10);border:1px solid var(--azul);
+    border-radius:3mm;padding:3.5mm 5mm;display:flex;align-items:center;gap:6mm;}
+  .pauta .cifra{font-size:30pt;font-weight:700;color:var(--azul);line-height:.85;letter-spacing:-.04em;}
+  .pauta .txt{font-size:8pt;line-height:1.5;color:var(--texto);}
+  .pauta .txt b{display:block;font-size:10.5pt;color:#fff;font-weight:600;margin-bottom:1.2mm;}
+
+  .datos{margin-top:5mm;display:flex;gap:6mm;}
+  .dato{flex:1;}
+  .dato span{font-size:7.2pt;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--azul-suave);display:block;margin-bottom:1.5mm;}
+  .dato p{font-size:8.4pt;line-height:1.55;color:var(--texto);}
+
+  .linea{margin-top:4.5mm;font-size:8pt;line-height:1.6;color:var(--texto);}
+  .linea b{color:var(--azul-suave);font-weight:600;}
+  .cierre{margin-top:auto;padding-top:4mm;border-top:1px solid rgba(255,255,255,.14);
+    display:flex;justify-content:space-between;align-items:flex-end;}
+  .cierre h3{font-size:16pt;font-weight:700;letter-spacing:-.02em;}
+  .cierre p{font-size:8.4pt;color:var(--texto);line-height:1.55;margin-top:1.5mm;max-width:100mm;}
+  .cierre .der{text-align:right;font-size:8.4pt;color:var(--tenue);line-height:1.8;}
+  .cierre .der b{display:block;font-size:11.5pt;color:var(--azul-suave);font-weight:700;}
+</style>
+</head>
+<body>
+<section class="hoja">
+  <div class="fondo"></div>
+  <div class="circ circ-azul"></div>
+  <div class="circ circ-violeta"></div>
+
+  <div class="capa">
+    <header class="cab">
+      <div class="logo">stack<i>digital</i></div>
+      <div class="fecha">Presupuesto<br>Octubre 2026</div>
+    </header>
+
+    <p class="volanta">Para IC Carteras</p>
+    <h1>Un catálogo propio<br><span class="az">y gente nueva mirándolo.</span></h1>
+
+    <p class="intro">
+      Hoy tus carteras se ven solo si alguien entra a tu perfil. La idea es que tengas
+      <b>tu propia página con todos los productos</b> y que todas las semanas entre
+      gente nueva a verlos, sin depender de que te encuentren de casualidad.
+    </p>
+
+    <h2>Dos formas de arrancar</h2>
+    <div class="packs">
+
+      <article class="pack destacado">
+        <span class="cinta">Recomendado</span>
+        <h3>Todo: web, contenido y publicidad</h3>
+
+        <div class="fila">
+          <span class="et">Implementación</span>
+          <span class="vl">$1.000.000<small>se paga una sola vez</small></span>
+        </div>
+        <div class="fila">
+          <span class="et">Después</span>
+          <span class="vl">$500.000<small>por mes</small></span>
+        </div>
+
+        <p class="sub">El primer mes armamos todo</p>
+        <ul>
+          <li>Tu página web con el catálogo de productos</li>
+          <li>Contenido de los productos, listo para publicar</li>
+          <li>Campañas de publicidad configuradas</li>
+          <li>Dominio, hosting y reuniones semanales mientras lo armamos</li>
+        </ul>
+
+        <p class="sub">Todos los meses</p>
+        <ul>
+          <li>Subimos productos nuevos y damos de baja los que no están</li>
+          <li>Los cambios que necesites en la página</li>
+          <li>Tu Instagram con las imágenes que generamos</li>
+          <li>La publicidad andando y revisada</li>
+        </ul>
+      </article>
+
+      <article class="pack">
+        <h3>Solo la página</h3>
+
+        <div class="fila">
+          <span class="et">La página</span>
+          <span class="vl">$800.000<small>pago único</small></span>
+        </div>
+        <div class="fila">
+          <span class="et">Soporte</span>
+          <span class="vl">$250.000<small>por mes</small></span>
+        </div>
+
+        <p class="sub">Qué incluye</p>
+        <ul>
+          <li>Tu página web con el catálogo de productos</li>
+          <li>Pensada para el celular, con el WhatsApp a la vista</li>
+          <li>Dominio y hosting resueltos</li>
+        </ul>
+
+        <p class="sub">El soporte mensual</p>
+        <ul>
+          <li>Subimos los productos nuevos que vayas trayendo</li>
+          <li>Damos de baja lo que se vendió</li>
+          <li>Los cambios que necesites</li>
+        </ul>
+      </article>
+    </div>
+
+    <h2>La inversión en publicidad va aparte</h2>
+    <div class="pauta">
+      <div class="cifra">191</div>
+      <div class="txt">
+        <b>conversaciones nuevas en 10 días, con USD 5 por día</b>
+        Ese es el resultado real de una clienta nuestra. Esa plata se le paga a Meta,
+        la cargás vos con tu tarjeta y la frenás cuando quieras: no está dentro de los
+        $500.000 mensuales, que son nuestro trabajo.
+      </div>
+    </div>
+
+    <p class="linea">
+      <b>Tiempos:</b> el primer mes es de armado y la página sale publicada dentro de ese mes. &nbsp;·&nbsp;
+      <b>Pago:</b> la implementación, 50% al arrancar y 50% al publicar. &nbsp;·&nbsp;
+      <b>Validez:</b> 15 días.
+    </p>
+
+    <div class="cierre">
+      <div class="izq">
+        <h3>¿Arrancamos?</h3>
+        <p>Escribinos y coordinamos una charla para ver bien tu catálogo y por dónde conviene empezar.</p>
+      </div>
+      <div class="der">
+        <b>11 3251-9490</b>
+        @stackdigital.arg
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>
