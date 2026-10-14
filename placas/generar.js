@@ -11,7 +11,7 @@ const { html, ANCHO, ALTO } = require('./plantilla.js');
     const pagina = await navegador.newPage({ viewport: { width: ANCHO, height: ALTO[formato] } });
     for (const [i, placa] of datos[formato].entries()) {
       const tmp = path.join(__dirname, `.placa-${formato}.html`);
-      fs.writeFileSync(tmp, html(placa, datos, formato));
+      fs.writeFileSync(tmp, html(placa, datos, formato, i, datos[formato].length));
       await pagina.goto('file://' + tmp);
       await pagina.evaluate(() => document.fonts.ready);
       await pagina.waitForTimeout(250);

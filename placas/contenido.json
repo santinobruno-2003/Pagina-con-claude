@@ -1,29 +1,80 @@
 {
   "marca": "stackdigital",
   "contacto": "@stackdigital.arg",
+  "encabezado": "STACKDIGITAL · META ADS",
   "cta": "Escribí PACIENTES",
   "carrusel": [
-    { "tipo": "portada", "volanta": "Para profesionales",
-      "titulo": "Más pacientes sin depender del boca en boca",
-      "bajada": "Deslizá →" },
-    { "tipo": "punto", "n": "01", "titulo": "La recomendación es buenísima",
-      "texto": "Pero no la controlás. Llega cuando llega." },
-    { "tipo": "punto", "n": "02", "titulo": "Y mientras tanto, esperás",
-      "texto": "Sin saber cuándo entra el próximo paciente." },
-    { "tipo": "punto", "n": "03", "titulo": "Con Meta Ads no esperás",
-      "texto": "Todos los días te ve gente nueva de tu zona, aunque nadie te haya recomendado." },
-    { "tipo": "dato", "cifra": "98", "titulo": "personas le escribieron en 7 días",
-      "texto": "Una clienta nuestra llegó a más de 11.000 personas en una semana." },
-    { "tipo": "cierre", "titulo": "¿Armamos la tuya?",
-      "bajada": "Escribinos la palabra PACIENTES y lo charlamos." }
+    {
+      "tipo": "portada",
+      "fondo": "navy",
+      "volanta": "Para profesionales",
+      "fuerte": "Más pacientes,",
+      "suave": "sin depender del boca en boca.",
+      "desliza": "Deslizá"
+    },
+    {
+      "tipo": "punto",
+      "fondo": "claro",
+      "n": "01",
+      "fuerte": "Buenísima,",
+      "suave": "pero no la controlás.",
+      "texto": "La recomendación llega cuando llega. Vos no decidís cuándo."
+    },
+    {
+      "tipo": "punto",
+      "fondo": "claro",
+      "n": "02",
+      "fuerte": "Y mientras tanto,",
+      "suave": "esperás.",
+      "texto": "Sin saber cuándo entra el próximo paciente."
+    },
+    {
+      "tipo": "punto",
+      "fondo": "claro",
+      "n": "03",
+      "fuerte": "Con Meta Ads",
+      "suave": "no esperás.",
+      "texto": "Todos los días te ve gente nueva de tu zona, aunque nadie te haya recomendado."
+    },
+    {
+      "tipo": "dato",
+      "fondo": "navy",
+      "cifra": "98",
+      "fuerte": "personas le escribieron",
+      "suave": "en 7 días.",
+      "texto": "Una clienta nuestra llegó a más de 11.000 personas de su zona en una semana."
+    },
+    {
+      "tipo": "cierre",
+      "fondo": "navy",
+      "fuerte": "¿Armamos",
+      "suave": "la tuya?",
+      "bajada": "Escribinos la palabra PACIENTES y lo charlamos."
+    }
   ],
   "historia": [
-    { "tipo": "portada", "volanta": "Para profesionales",
-      "titulo": "¿Y si no dependieras del boca en boca?",
-      "bajada": "La recomendación es buenísima. El problema es que no la controlás." },
-    { "tipo": "dato", "cifra": "98", "titulo": "personas le escribieron en 7 días",
-      "texto": "Una clienta nuestra llegó a más de 11.000 personas de su zona en una semana." },
-    { "tipo": "cierre", "titulo": "¿Armamos la tuya?",
-      "bajada": "Tocá acá abajo y lo charlamos." }
+    {
+      "tipo": "portada",
+      "fondo": "navy",
+      "volanta": "Para profesionales",
+      "fuerte": "¿Y si no dependieras",
+      "suave": "del boca en boca?",
+      "bajada": "La recomendación es buenísima. El problema es que no la controlás."
+    },
+    {
+      "tipo": "dato",
+      "fondo": "claro",
+      "cifra": "98",
+      "fuerte": "personas le escribieron",
+      "suave": "en 7 días.",
+      "texto": "Una clienta nuestra llegó a más de 11.000 personas de su zona en una semana."
+    },
+    {
+      "tipo": "cierre",
+      "fondo": "navy",
+      "fuerte": "¿Armamos",
+      "suave": "la tuya?",
+      "bajada": "Tocá acá abajo y lo charlamos."
+    }
   ]
 }
