@@ -11,6 +11,8 @@ Les dejo un PDF cortito con lo que hacemos. Si tenés un negocio y te pinta char
 escribime por privado y te digo de una si te sirve o si todavía no es el momento.
 Sin compromiso 👍
 
+Acá pueden ver más de lo que hago 👉 instagram.com/stackdigital.arg
+
 ---
 
 ## Opción B — con el caso real
@@ -26,6 +28,8 @@ Para que se den una idea, a una clienta le entraron **191 consultas por WhatsApp
 
 Les dejo un PDF con lo que hacemos. Cualquier cosa me escriben por privado y lo
 charlamos tranquilos, sin compromiso 👍
+
+Acá pueden ver más de lo que hago 👉 instagram.com/stackdigital.arg
 
 ---
 
