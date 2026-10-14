@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<title>stackdigital — Para negocios del barrio</title>
+<style>
+  @page { size: A4; margin: 0; }
+
+  :root{
+    --fondo:#0C1321;
+    --degrade:#0B2C5A;
+    --circulo:#0B294E;
+    --violeta:#211A41;
+    --azul:#0574FF;
+    --azul-suave:#73ACFF;
+    --texto:#C5C5E0;
+    --tenue:#6A698C;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Poppins',sans-serif;color:#fff;-webkit-font-smoothing:antialiased;}
+
+  .hoja{
+    width:210mm;height:297mm;background:var(--fondo);
+    padding:11mm 14mm 10mm;position:relative;overflow:hidden;
+    display:flex;flex-direction:column;
+  }
+  .fondo{position:absolute;inset:0;
+    background:radial-gradient(240mm 200mm at 80% 12%, var(--degrade) 0%, rgba(11,44,90,0) 60%);}
+  .circ{position:absolute;border-radius:50%;}
+  .circ-azul{width:150mm;height:150mm;top:-46mm;right:-38mm;background:var(--circulo);}
+  .circ-violeta{width:110mm;height:110mm;bottom:-52mm;left:-44mm;background:var(--violeta);}
+  .capa{position:relative;z-index:1;display:flex;flex-direction:column;height:100%;}
+
+  .logo{font-size:15pt;font-weight:700;letter-spacing:-.01em;margin-bottom:7mm;}
+  .logo i{font-style:normal;color:var(--azul);}
+
+  .volanta{font-size:8pt;font-weight:600;letter-spacing:.28em;text-transform:uppercase;
+    color:var(--azul-suave);margin-bottom:4mm;}
+  h1{font-size:28pt;font-weight:700;line-height:1.0;letter-spacing:-.025em;}
+  h1 .az{color:var(--azul-suave);}
+  .intro{font-size:10pt;line-height:1.6;color:var(--texto);margin-top:5mm;max-width:140mm;}
+  .intro b{color:#fff;font-weight:600;}
+
+  .porque{
+    margin-top:6mm;border-left:2px solid var(--azul);padding:3mm 0 3mm 5.5mm;
+    font-size:10.5pt;line-height:1.55;color:#fff;font-weight:500;max-width:148mm;
+  }
+  .porque span{color:var(--texto);font-weight:400;}
+
+  h2{font-size:8pt;font-weight:600;letter-spacing:.28em;text-transform:uppercase;
+    color:var(--azul-suave);margin:7mm 0 3.5mm;}
+
+  .servicios{display:grid;grid-template-columns:1fr 1fr;gap:4mm;}
+  .serv{
+    background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.12);
+    border-radius:3mm;padding:4.5mm 5mm;
+  }
+  .serv .n{font-size:9pt;font-weight:700;color:var(--azul);letter-spacing:.1em;margin-bottom:2.5mm;}
+  .serv h3{font-size:11.5pt;font-weight:700;letter-spacing:-.01em;margin-bottom:2mm;}
+  .serv p{font-size:8.2pt;line-height:1.45;color:var(--texto);}
+  .juntos{
+    margin-top:4mm;background:rgba(5,116,255,.10);border:1px solid var(--azul);
+    border-radius:3mm;padding:3.5mm 5mm;font-size:8.6pt;line-height:1.55;color:#fff;
+  }
+  .juntos b{color:var(--azul-suave);font-weight:700;}
+  .caso{
+    display:flex;align-items:center;gap:8mm;
+    background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.12);
+    border-radius:3mm;padding:5mm 6mm;
+  }
+  .caso .cifra{font-size:40pt;font-weight:700;color:var(--azul);line-height:.85;letter-spacing:-.04em;}
+  .caso .txt{font-size:11pt;font-weight:600;line-height:1.3;}
+  .caso .txt span{display:block;font-size:8.6pt;font-weight:400;color:var(--texto);margin-top:2mm;}
+
+  .cierre{margin-top:auto;padding-top:5mm;border-top:1px solid rgba(255,255,255,.14);
+    display:flex;justify-content:space-between;align-items:flex-end;}
+  .cierre h3{font-size:17pt;font-weight:700;letter-spacing:-.02em;}
+  .cierre p{font-size:9pt;color:var(--texto);line-height:1.55;margin-top:2mm;max-width:95mm;}
+  .cierre .der{text-align:right;font-size:9pt;color:var(--tenue);line-height:1.8;}
+  .cierre .der b{display:block;font-size:12pt;color:var(--azul-suave);font-weight:700;}
+</style>
+</head>
+<body>
+<section class="hoja">
+  <div class="fondo"></div>
+  <div class="circ circ-azul"></div>
+  <div class="circ circ-violeta"></div>
+
+  <div class="capa">
+    <div class="logo">stack<i>digital</i></div>
+
+    <p class="volanta">Para negocios del barrio</p>
+    <h1>Que te encuentren<br><span class="az">cuando te buscan.</span></h1>
+
+    <p class="intro">
+      Soy Bian. Capaz ya me ubicás del barrio. Me dedico a esto:
+      <b>armar páginas web y campañas</b> para que los negocios de acá aparezcan
+      en el celular de la gente que los está buscando.
+    </p>
+
+    <p class="porque">
+      Hoy nadie va a un lugar sin buscarlo antes en el celular.
+      <span>Si no te encuentran, van al que sí aparece. Así de simple.</span>
+    </p>
+
+    <h2>Qué hacemos</h2>
+    <div class="servicios">
+      <article class="serv">
+        <p class="n">01</p>
+        <h3>Tu página web</h3>
+        <p>Con diseño propio, pensada para el celular y con el WhatsApp siempre a la vista.</p>
+      </article>
+      <article class="serv">
+        <p class="n">02</p>
+        <h3>Publicidad en Instagram y Facebook</h3>
+        <p>Para que te vea gente nueva de tu zona todos los días, aunque nadie te haya recomendado.</p>
+      </article>
+      <article class="serv">
+        <p class="n">03</p>
+        <h3>Contenido para tus redes</h3>
+        <p>Placas y videos con tu identidad, listos para publicar. Si ya hacés contenido, lo potenciamos.</p>
+      </article>
+      <article class="serv">
+        <p class="n">04</p>
+        <h3>Todo lo que no se ve</h3>
+        <p>Servidores, actualizaciones, soporte y los cambios que necesites. De eso me encargo yo.</p>
+      </article>
+    </div>
+
+    <p class="juntos">
+      <b>Lo ideal es todo junto.</b> La página sola recibe a quien ya te busca, y la publicidad
+      sola no tiene a dónde mandar a la gente. Igual lo armamos según lo que necesite tu negocio.
+    </p>
+
+    <h2>Un caso real, acá nomás</h2>
+    <div class="caso">
+      <div class="cifra">98</div>
+      <div class="txt">
+        personas le escribieron por WhatsApp en 7 días
+        <span>Liza Lencería, con unos USD 5 por día de publicidad.</span>
+      </div>
+    </div>
+
+    <div class="cierre">
+      <div class="izq">
+        <h3>¿Lo charlamos?</h3>
+        <p>Escribime y te digo de una si te sirve o si todavía no es el momento.
+           No te voy a vender nada que no necesites.</p>
+      </div>
+      <div class="der">
+        <b>11 3251-9490</b>
+        @stackdigital.org
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>
