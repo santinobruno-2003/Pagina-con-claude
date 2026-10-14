@@ -11,7 +11,7 @@ y a historia, para sumar formatos al mismo conjunto de anuncios.
 
 ## Marca
 
-Calcada del feed de @stackdigital.org. Los colores salieron de muestrear una
+Calcada del feed de @stackdigital.arg. Los colores salieron de muestrear una
 captura del perfil, no de estimarlos a ojo:
 
 | | |

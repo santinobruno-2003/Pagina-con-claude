@@ -1,4 +1,4 @@
-// Placas para campaña de Meta, calcadas del feed de @stackdigital.org.
+// Placas para campaña de Meta, calcadas del feed de @stackdigital.arg.
 // Colores muestreados de una captura del perfil.
 const ANCHO = 1080;
 const ALTO  = { carrusel: 1080, historia: 1920 };
