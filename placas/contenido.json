@@ -1,80 +1,36 @@
 {
   "marca": "stackdigital",
-  "contacto": "@stackdigital.arg",
-  "encabezado": "STACKDIGITAL · META ADS",
+  "contacto": "@stackdigital.org",
   "cta": "Escribí PACIENTES",
   "carrusel": [
-    {
-      "tipo": "portada",
-      "fondo": "navy",
-      "volanta": "Para profesionales",
-      "fuerte": "Más pacientes,",
-      "suave": "sin depender del boca en boca.",
-      "desliza": "Deslizá"
-    },
-    {
-      "tipo": "punto",
-      "fondo": "claro",
-      "n": "01",
-      "fuerte": "Buenísima,",
-      "suave": "pero no la controlás.",
-      "texto": "La recomendación llega cuando llega. Vos no decidís cuándo."
-    },
-    {
-      "tipo": "punto",
-      "fondo": "claro",
-      "n": "02",
-      "fuerte": "Y mientras tanto,",
-      "suave": "esperás.",
-      "texto": "Sin saber cuándo entra el próximo paciente."
-    },
-    {
-      "tipo": "punto",
-      "fondo": "claro",
-      "n": "03",
-      "fuerte": "Con Meta Ads",
-      "suave": "no esperás.",
-      "texto": "Todos los días te ve gente nueva de tu zona, aunque nadie te haya recomendado."
-    },
-    {
-      "tipo": "dato",
-      "fondo": "navy",
-      "cifra": "98",
-      "fuerte": "personas le escribieron",
-      "suave": "en 7 días.",
-      "texto": "Una clienta nuestra llegó a más de 11.000 personas de su zona en una semana."
-    },
-    {
-      "tipo": "cierre",
-      "fondo": "navy",
-      "fuerte": "¿Armamos",
-      "suave": "la tuya?",
-      "bajada": "Escribinos la palabra PACIENTES y lo charlamos."
-    }
+    { "tipo": "portada", "volanta": "PARA PROFESIONALES",
+      "fuerte": "Más pacientes, sin depender del ", "azul": "boca en boca.",
+      "texto": "Lo escuchamos de todos los profesionales: la agenda depende de que alguien te recomiende." },
+    { "tipo": "punto", "volanta": "ASÍ ES HOY",
+      "fuerte": "La recomendación es buenísima. Pero ", "azul": "no la controlás.",
+      "texto": "Llega cuando llega. Vos no decidís cuándo." },
+    { "tipo": "punto", "volanta": "EL PROBLEMA",
+      "fuerte": "Y mientras tanto, ", "azul": "esperás.",
+      "texto": "Sin saber cuándo entra el próximo paciente." },
+    { "tipo": "punto", "volanta": "LA DIFERENCIA",
+      "fuerte": "Con Meta Ads ", "azul": "no esperás.",
+      "texto": "Todos los días te ve gente nueva de tu zona, aunque nadie te haya recomendado." },
+    { "tipo": "dato", "volanta": "CASO REAL · META ADS", "cifra": "98",
+      "fuerte": "personas le escribieron por WhatsApp en 7 días",
+      "texto": "Con unos USD 5 por día. Así lo hicimos con <b>Liza Lencería</b>." },
+    { "tipo": "cierre", "volanta": "¿ARRANCAMOS?",
+      "fuerte": "Armamos la tuya ", "azul": "esta semana.",
+      "texto": "Escribinos la palabra PACIENTES y lo charlamos." }
   ],
   "historia": [
-    {
-      "tipo": "portada",
-      "fondo": "navy",
-      "volanta": "Para profesionales",
-      "fuerte": "¿Y si no dependieras",
-      "suave": "del boca en boca?",
-      "bajada": "La recomendación es buenísima. El problema es que no la controlás."
-    },
-    {
-      "tipo": "dato",
-      "fondo": "claro",
-      "cifra": "98",
-      "fuerte": "personas le escribieron",
-      "suave": "en 7 días.",
-      "texto": "Una clienta nuestra llegó a más de 11.000 personas de su zona en una semana."
-    },
-    {
-      "tipo": "cierre",
-      "fondo": "navy",
-      "fuerte": "¿Armamos",
-      "suave": "la tuya?",
-      "bajada": "Tocá acá abajo y lo charlamos."
-    }
+    { "tipo": "portada", "volanta": "PARA PROFESIONALES",
+      "fuerte": "¿Y si no dependieras del ", "azul": "boca en boca?",
+      "texto": "La recomendación es buenísima. El problema es que no la controlás." },
+    { "tipo": "dato", "volanta": "CASO REAL · META ADS", "cifra": "98",
+      "fuerte": "personas le escribieron por WhatsApp en 7 días",
+      "texto": "Con unos USD 5 por día. Así lo hicimos con <b>Liza Lencería</b>." },
+    { "tipo": "cierre", "volanta": "¿ARRANCAMOS?",
+      "fuerte": "Armamos la tuya ", "azul": "esta semana.",
+      "texto": "Tocá acá abajo y lo charlamos." }
   ]
 }
