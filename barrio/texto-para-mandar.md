@@ -21,8 +21,8 @@ Armo **páginas web y campañas de publicidad** para negocios: la idea es que te
 encuentren cuando alguien busca en el celular lo que vos vendés, sin depender de
 que te recomienden.
 
-Para que se den una idea, a una clienta le entraron **98 consultas por WhatsApp en
-una semana**.
+Para que se den una idea, a una clienta le entraron **191 consultas por WhatsApp en
+10 días**.
 
 Les dejo un PDF con lo que hacemos. Cualquier cosa me escriben por privado y lo
 charlamos tranquilos, sin compromiso 👍
